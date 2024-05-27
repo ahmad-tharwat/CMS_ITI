@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="https://iti.gov.eg">
+            <img id="logo" src="../imgs/ITI_logo.png" height="50" alt="iti logo">
+        </a>
+        <nav id="buttons">
+            <a href="../index.html">Home</a>
+            <a href="./syllabus.html">Road Map</a>
+            <a href="./registration_form.html" class="active">Registration Form</a>
+            <a href="https://iti.gov.eg/contact-us">Contact</a>
+        </nav>
+    </header>
+    <div id="form">
+        <form action="" method="post" id="form">
+            <h1>Register - Create Account</h1>
+            <div class="title">
+                Field marked with <span style="color: red;">*</span> are cumpolsery fields
+            </div>
+            <table id="fTable">
+                <thead>
+                    <tr>
+                        <th scope="col" id="labels"></th>
+                        <th scope="col" id="inputs"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><label for="name"><span style="color: red;">*</span> Name</label></th>
+                        <td><input type="text" class="text" id="name" name="name" required
+                                placeholder="first_Name last_Name"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="email"><span style="color: red;">*</span> e-mail</label></th>
+                        <td><input type="email" class="text" id="email" name="email" required
+                                placeholder="mail@domain.abc"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="alt_email">Alternative e-mail</label></th>
+                        <td><input type="email" class="text" id="alt_email" name="alt_email" autocomplete="on"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="phone">Phone Number</label></th>
+                        <td>
+                            <table id="phTable">
+                                <tr>
+                                    <td scope="col"><label>Country Code</label></td>
+                                    <td scope="col"><label>-</label></td>
+                                    <td scope="col"><label>City Code</label></td>
+                                    <td scope="col"><label>-</label></td>
+                                    <td scope="col"><label>Number</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="tel" id="phone" name="code" placeholder="+20"></td>
+                                    <td><label>-</label></td>
+                                    <td><input type="tel" id="phone" name="code" placeholder="03"></td>
+                                    <td><label>-</label></td>
+                                    <td><input type="tel" id="phone" name="phone" placeholder="1234567"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="mobile">Mobile Number</label></th>
+                        <td><input type="tel" id="mobile" name="mobile" placeholder="012 3456 7890"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="address"><span style="color: red;">*</span> Address</label></th>
+                        <td><textarea id="address" name="address" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="country"><span style="color: red;">*</span> Country</label></th>
+                        <td>
+                            <select id="country" name="country" required>
+                                <option value=""> Choose a country </option>
+                                <option value="eg">Egypt</option>
+                                <option value="etc">Other</option>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="password"><span style="color: red;">*</span> Password</label></th>
+                        <td><input type="password" id="password" name="password" required autocomplete="on"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="repeat_password"><span style="color: red;">*</span> Re-enter
+                                Password</label>
+                        </th>
+                        <td><input type="password" id="repeat_password" name="password" required></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" id="terms" name="terms" value="1" required>
+                            <label for="terms">I accept the <a href="#">terms of use</a></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" id="submission" name="submission" value="Continue >>">
+                            <input type="reset" id="resetting" name="resetting" value="Reset">
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
+    <footer>
+        <hr>
+        <p style="text-align: center;">
+            Copyright 2021 by Noha Salah &reg;. All Rights Reserved.
+        </p>
+    </footer>
+</body>
+
+</html>
