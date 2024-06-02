@@ -2,7 +2,7 @@
 alert("Welcom to my file");
 function get_username() {
         let user_name = prompt("Please enter your name");
-        var regex = /^[a-zA-Z]+$/;
+        var regex = /^[a-zA-Z ]+$/;
         if (!user_name.match(regex)) {
                 alert("Wrong input! Try again");
                 return get_username();
