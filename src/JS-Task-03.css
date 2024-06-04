@@ -1,0 +1,70 @@
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: calc(50% - 80px);
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.task-item {
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ced4da;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-text {
+    flex: 1;
+    margin-right: 10px;
+    color: #333;
+}
+
+.task-buttons button {
+    background-color: transparent;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.task-buttons button:hover {
+    color: #0056b3;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #888;
+}
