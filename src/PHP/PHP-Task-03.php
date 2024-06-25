@@ -73,7 +73,6 @@
                 case 'textarea':
                     return htmlspecialchars($value);
                     break;
-                // Putting the logic for radio and select elements takes unnecessary time for now
                 default:
                     return '';
                     break;
