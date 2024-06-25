@@ -58,6 +58,28 @@
             </tbody>
         </table>
     </div>
+    <?php
+        function retain_value($field_name, $element_type) {
+            if (isset($_POST[$field_name])) {
+                $value = $_POST[$field_name];
+            } else {
+                $value = array();
+            }
+        
+            switch ($element_type) {
+                case 'text':
+                case 'email':
+                case 'number':
+                case 'textarea':
+                    return htmlspecialchars($value);
+                    break;
+                // Putting the logic for radio and select elements takes unnecessary time for now
+                default:
+                    return '';
+                    break;
+            }
+        }        
+    ?>
     <div>
         <form action="<?php $_PHP_SELF ?>" method="post" id="form">
             <h1>Application name: AAST_BIS class registration</h1>
@@ -75,40 +97,42 @@
                     <tr>
                         <th scope="row"><label for="name"><span style="color: red;">*</span> Name</label></th>
                         <td><input type="text" class="text" id="name" name="name" required
-                                placeholder="first_Name last_Name"></td>
+                            pattern="[a-zA-Z ]+" placeholder="first_Name last_Name" value="<?php echo retain_value('name', 'text') ?>"></td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="email"><span style="color: red;">*</span> E-mail</label></th>
                         <td><input type="email" class="text" id="email" name="email" required
-                                placeholder="mail@domain.abc"></td>
+                                placeholder="mail@domain.abc" value="<?php echo retain_value('email', 'email') ?>"></td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="group_id">Group #</label></th>
-                        <td><input type="text" class="text" id="group_id" name="group_id"></td>
+                        <td><input type="number" class="text" id="group_id" name="group_id" value="<?php echo retain_value('group_id', 'text') ?>"></td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="class_details">Class details</label></th>
-                        <td><textarea id="class_details" name="class_details"></textarea></td>
+                        <td><textarea id="class_details" name="class_details"><?php echo retain_value('class_details', 'textarea') ?></textarea></td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="gender"><span style="color: red;">*</span> Gender</label></th>
                         <td style="display: flex; width: 50%">
-                            <input type="radio" class="text" id="gender1" name="gender" value="male" required>
+                            <input type="radio" class="text" id="gender1" name="gender" value="male" 
+                            <?php if (isset($_POST['gender']) && $_POST['gender'] === 'male') echo 'checked'; ?> required>
                             <label for="gender1">Male</label>
-                            <input type="radio" class="text" id="gender2" name="gender" value="female" required>
+                            <input type="radio" class="text" id="gender2" name="gender" value="female" 
+                            <?php if (isset($_POST['gender']) && $_POST['gender'] === 'female') echo 'checked'; ?> required>
                             <label for="gender2">Female</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="courses">Courses</label></th>
                         <td>
-                            <select id="courses" name="courses[]" multiple>
-                                <option value="php">PHP</option>
-                                <option value="mysql">MySQL</option>
-                                <option value="html">HTML</option>
-                                <option value="js">JavaScript</option>
-                                <option value="css">CSS</option>
-                                <option value="git">Git</option>
+                        <select id="courses" name="courses[]" multiple>
+                            <option value="php" <?php if (isset($_POST['courses']) && in_array('php', $_POST['courses'])) echo 'selected'; ?>>PHP</option>
+                            <option value="mysql" <?php if (isset($_POST['courses']) && in_array('mysql', $_POST['courses'])) echo 'selected'; ?>>MySQL</option>
+                            <option value="html" <?php if (isset($_POST['courses']) && in_array('html', $_POST['courses'])) echo 'selected'; ?>>HTML</option>
+                            <option value="js" <?php if (isset($_POST['courses']) && in_array('js', $_POST['courses'])) echo 'selected'; ?>>JavaScript</option>
+                            <option value="css" <?php if (isset($_POST['courses']) && in_array('css', $_POST['courses'])) echo 'selected'; ?>>CSS</option>
+                            <option value="git" <?php if (isset($_POST['courses']) && in_array('git', $_POST['courses'])) echo 'selected'; ?>>Git</option>
                         </td>
                     </tr>
                 </tbody>
