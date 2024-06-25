@@ -1,0 +1,44 @@
+body {
+    background-color: #363636;
+    color: whitesmoke;
+}
+
+header {
+    overflow: hidden;
+    background-color: whitesmoke;
+    padding: 10px 20px;
+}
+
+header #logo {
+    float: left;
+    width: 112.683px;
+}
+
+#buttons {
+    float: right;
+}
+
+#buttons a {
+    float: left;
+    color: black;
+    text-align: center;
+    height: 50px;
+    width: 120px;
+    text-decoration: none;
+    line-height: 50px;
+}
+
+header a:hover {
+    background-color: #8b000099;
+    color: white;
+}
+
+header a.active {
+    background-color: #8b0000;
+    color: white;
+}
+
+footer {
+    color: white;
+    text-align: center;
+}
