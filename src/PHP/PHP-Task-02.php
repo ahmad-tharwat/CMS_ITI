@@ -24,6 +24,7 @@
             <a href="./PHP-Task-01.php">PHP Task-01</a>
             <a href="./PHP-Task-02.php" class="active">PHP Task-02</a>
             <a href="./PHP-Task-03.php">PHP Task-03</a>
+            <a href="./PHP-Task-04.php">PHP Task-04</a>
             <a href="https://iti.gov.eg/contact-us">Contact</a>
         </nav>
     </header>

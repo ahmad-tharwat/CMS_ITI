@@ -16,25 +16,23 @@
         </a>
         <nav id="buttons">
             <a href="../../index.html">Home</a>
-            <a href="./syllabus.html">Road Map</a>
-            <a href="./registration_form.html">Registration Form</a>
-            <a href="./JS-Task-01.html" class="active">JS Task-01</a>
-            <a href="./JS-Task-02.html">JS Task-02</a>
-            <a href="./JS-Task-03.html">JS Task-03</a>
-            <a href="../PHP/PHP-Task-01.php">PHP Task-01</a>
-            <a href="../PHP/PHP-Task-02.php">PHP Task-02</a>
-            <a href="../PHP/PHP-Task-03.php">PHP Task-03</a>
-            <a href="../PHP/PHP-Task-04.php">PHP Task-04</a>
+            <a href="../HTML/syllabus.html">Road Map</a>
+            <a href="../HTML/registration_form.html">Registration Form</a>
+            <a href="../HTML/JS-Task-01.html">JS Task-01</a>
+            <a href="../HTML/JS-Task-02.html">JS Task-02</a>
+            <a href="../HTML/JS-Task-03.html">JS Task-03</a>
+            <a href="./PHP-Task-01.php">PHP Task-01</a>
+            <a href="./PHP-Task-02.php">PHP Task-02</a>
+            <a href="./PHP-Task-03.php">PHP Task-03</a>
+            <a href="./PHP-Task-04.php" class="active">PHP Task-04</a>
             <a href="https://iti.gov.eg/contact-us">Contact</a>
         </nav>
     </header>
-    <div>
-        <script src="../JavaScript/JS-Task-01.js"></script>
-    </div>
+    
     <footer>
         <hr>
         <p style="text-align: center;">
-            Copyright 2024 by Rehab Farouk &copy;. All Rights Reserved.
+            Copyright 2024 by Noha Salah &copy;. All Rights Reserved.
         </p>
     </footer>
 </body>

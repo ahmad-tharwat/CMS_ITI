@@ -4,6 +4,7 @@ body {
 }
 
 header {
+    display: inline-flex;
     overflow: hidden;
     background-color: whitesmoke;
     padding: 10px 20px;
@@ -16,6 +17,7 @@ header #logo {
 
 #buttons {
     float: right;
+    display: flex;
 }
 
 #buttons a {
@@ -23,7 +25,8 @@ header #logo {
     color: black;
     text-align: center;
     height: 50px;
-    width: 120px;
+    width:120px;
+    padding-inline: 5px;
     text-decoration: none;
     line-height: 50px;
 }

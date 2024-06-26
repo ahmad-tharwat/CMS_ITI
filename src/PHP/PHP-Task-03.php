@@ -25,6 +25,7 @@
             <a href="./PHP-Task-01.php">PHP Task-01</a>
             <a href="./PHP-Task-02.php">PHP Task-02</a>
             <a href="./PHP-Task-03.php" class="active">PHP Task-03</a>
+            <a href="./PHP-Task-04.php">PHP Task-04</a>
             <a href="https://iti.gov.eg/contact-us">Contact</a>
         </nav>
     </header>
@@ -63,9 +64,8 @@
             if (isset($_POST[$field_name])) {
                 $value = $_POST[$field_name];
             } else {
-                $value = array();
+                $value = '';
             }
-        
             switch ($element_type) {
                 case 'text':
                 case 'email':
@@ -73,6 +73,7 @@
                 case 'textarea':
                     return htmlspecialchars($value);
                     break;
+                // putting the logic for radio and select elements is taking unnecessary time
                 default:
                     return '';
                     break;
