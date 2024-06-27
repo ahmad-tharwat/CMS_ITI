@@ -21,35 +21,34 @@
             <a href="../HTML/JS-Task-01.html">JS Task-01</a>
             <a href="../HTML/JS-Task-02.html">JS Task-02</a>
             <a href="../HTML/JS-Task-03.html">JS Task-03</a>
-            <a href="./PHP-Task-01.php" class="active">PHP Task-01</a>
+            <a href="./PHP-Task-01.php">PHP Task-01</a>
             <a href="./PHP-Task-02.php">PHP Task-02</a>
             <a href="./PHP-Task-03.php">PHP Task-03</a>
             <a href="./PHP-Task-04.php">PHP Task-04</a>
-            <a href="./PHP-Task-05.php">PHP Task-05</a>
+            <a href="./PHP-Task-05.php" class="active">PHP Task-05</a>
             <a href="https://iti.gov.eg/contact-us">Contact</a>
         </nav>
     </header>
-    <div>
-        <?php
-            define('WEBSITE_NAME', 'ITI-CMS');
-            $age = 10;
-            switch (true) {
-                case ($age < 5):
-                    echo "Stay at home";
-                    break;
-                case ($age == 5):
-                    echo "Go to Kindergarten";
-                    break;
-                case ($age >= 6 && $age <= 12):
-                    echo "Go to grade: " . $age;
-                    break;
-                default:
-                    echo "Age is not within specified ranges";
-            }
-            phpinfo();
-        ?>
-    </div>
-
+    <?php
+        function session() {
+            session_start();
+            $_SESSION['name'] = 'Ahmad';
+            setcookie("name", "Ahmad Tharwat", time()+60);
+            echo "<pre>";
+            print_r($_SESSION);
+            echo "<pre>";
+            if (isset($_SESSION['page_count'])) $_SESSION['page_count'] += 1; else $_SESSION['page_count'] = 1;
+            echo "Number of visits = <span style='color:#14c4ff'>" . $_SESSION['page_count'] . "</span> times<br>";
+            echo "Session ID is <span style='color:#14c4ff'>" . session_id() . "</span><br>";
+        }
+        session();
+        if ($_SESSION['page_count'] > 10) {
+            session_regenerate_id();
+            echo "<br>Session destroyed<br>";
+            echo "Next session id will be: <span style='color:#14c4ff'>" . session_id() . "</span><br>";
+            session_destroy();
+        }
+    ?>
     <footer>
         <hr>
         <p style="text-align: center;">
@@ -57,5 +56,4 @@
         </p>
     </footer>
 </body>
-
 </html>
